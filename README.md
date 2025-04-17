@@ -14,7 +14,7 @@ DVC VS ML-Ops:
     Use DVC for data versioning + pipeline stages.
     Use MLflow for tracking metrics, parameters, and registering models.
 
-|   **Component**          | **MLflow**                                      | **DVC**                                        |
+| **Component**          | **MLflow**                                      | **DVC**                                        |
 |------------------------|-------------------------------------------------|------------------------------------------------|
 | **Experiment Tracking** | ✅ Parameters, metrics, artifacts, UI            | ⚠️ Not primary; can track manually             |
 | **Model Versioning**   | ✅ With built-in model registry                  | ✅ Uses Git + remote storage                   |
@@ -23,4 +23,16 @@ DVC VS ML-Ops:
 | **Storage Backend**    | File system, S3, GCS, etc.                       | Any cloud remote + Git                         |
 | **Integration with Git**| ❌ Not tightly coupled (Works independent)      | ✅ Strong Git integration                      |
 
+To install:
+    pip install mlflow
+    mlflow ui => used to give the UI and starts the UI
 
+Experiment: The "Folder" or Project
+Think of an experiment as a container or project workspace. It groups multiple related model training attempts (aka runs) together.
+
+You define an experiment once.
+Each time you try a different model configuration, it creates a new run within that experiment.
+
+
+Run: A Single Execution
+A run is one single execution of your training pipeline — with specific parameters, code, metrics, and artifacts.	
